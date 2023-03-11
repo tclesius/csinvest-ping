@@ -13,11 +13,13 @@ services:
   nginx:
     build: ./nginx
     container_name: nginx
+    privileged: true
     restart: always
     ports:
       - 6969:80
     depends_on:
       - flask
+
 networks:
   default:
     external: true
