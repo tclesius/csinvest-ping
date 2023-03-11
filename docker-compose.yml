@@ -3,7 +3,7 @@ version: "3.7"
 networks:
   nginx-proxy-manager_default:
     external: true
-    
+
 services:
   flask:
     build: ./flask
@@ -21,6 +21,6 @@ services:
     networks:
       - nginx-proxy-manager_default
     ports:
-      - 80:80
+      - 81:80
     depends_on:
       - flask
