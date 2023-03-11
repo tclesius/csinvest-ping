@@ -1,0 +1,8 @@
+version: 'version: "3.7"'
+
+services:
+  csinvest-api:
+    build: 
+      context: ./
+    ports:
+      - "5000:6969"
