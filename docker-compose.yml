@@ -13,6 +13,8 @@ services:
       - APP_NAME=MyFlaskApp
     expose:
       - 8080
+    networks:
+      - nginx-proxy-manager_default
   
   nginx:
     build: ./nginx
