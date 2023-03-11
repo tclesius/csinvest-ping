@@ -21,6 +21,6 @@ services:
     networks:
       - nginx-proxy-manager_default
     ports:
-      - 81:80
+      - 82:80
     depends_on:
       - flask
