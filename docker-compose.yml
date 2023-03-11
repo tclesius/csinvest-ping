@@ -14,7 +14,9 @@ services:
     build: ./nginx
     container_name: nginx
     restart: always
+    networks:
+      - nginx-proxy-manager_default
     ports:
-      - 6969:80
+      - 80:80
     depends_on:
       - flask
