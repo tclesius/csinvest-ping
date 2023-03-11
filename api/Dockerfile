@@ -1,7 +1,9 @@
-FROM python:alpine3.7
-COPY . /api
-WORKDIR /api
+FROM python:3
+
+WORKDIR /app
+COPY . .
+
 RUN pip install -r requirements.txt
-EXPOSE 5001
+
 ENTRYPOINT [ "python" ]
-CMD [ "app.py" ]
+CMD [ "main.py" ]
