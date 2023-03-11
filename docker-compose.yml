@@ -1,5 +1,9 @@
 version: "3.7"
 
+networks:
+  nginx-proxy-manager_default:
+    external: true
+
 services:
   flask:
     build: ./flask
@@ -13,14 +17,9 @@ services:
   nginx:
     build: ./nginx
     container_name: nginx
-    privileged: true
     restart: always
     ports:
       - 6969:80
     depends_on:
       - flask
 
-networks:
-  default:
-    external: true
-    name: nginx-proxy-manager_default
