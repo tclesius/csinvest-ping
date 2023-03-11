@@ -22,4 +22,6 @@ services:
       - 6969:80
     depends_on:
       - flask
+    networks:
+      - nginx-proxy-manager_default
 
