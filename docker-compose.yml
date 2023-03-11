@@ -1,7 +1,8 @@
 version: "3.7"
 
 networks:
-  scoobydoo:
+  nginx-proxy-manager_default:
+    external: true
 
 services:
   flask:
@@ -10,11 +11,12 @@ services:
     restart: always
     environment:
       - APP_NAME=MyFlaskApp
+      - DB_USERNAME=example
     expose:
       - 8080
     networks:
-      - scoobydoo
-  
+      - nginx-proxy-manager_default
+        
   nginx:
     build: ./nginx
     container_name: nginx
@@ -22,5 +24,5 @@ services:
     depends_on:
       - flask
     networks:
-      - scoobydoo
+      - nginx-proxy-manager_default
 
