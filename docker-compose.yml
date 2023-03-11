@@ -18,8 +18,6 @@ services:
     build: ./nginx
     container_name: nginx
     restart: always
-    ports:
-      - 80:80
     depends_on:
       - flask
     networks:
