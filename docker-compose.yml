@@ -18,3 +18,7 @@ services:
       - 6969:80
     depends_on:
       - flask
+networks:
+  default:
+    external: true
+    name: nginx-proxy-manager_default
