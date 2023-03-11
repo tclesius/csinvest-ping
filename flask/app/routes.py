@@ -9,8 +9,8 @@ def ping():
 def hello(name):
     return 'Hello, ' + 'Tom'
 
-@app.route('/jsonify', methods=['GET'])
-def jsonify():
+@app.route('/json', methods=['GET'])
+def json():
     # returns {'success': True, 'email': xxx@xxx.com, 'password': 'xxx'}
     args = request.args
     email = args.get('email')
