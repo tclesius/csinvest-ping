@@ -1,8 +1,7 @@
 version: "3.7"
 
 networks:
-  nginx-proxy-manager_default:
-    external: true
+  scoobydoo:
 
 services:
   flask:
@@ -14,7 +13,7 @@ services:
     expose:
       - 8080
     networks:
-      - nginx-proxy-manager_default
+      - scoobydoo
   
   nginx:
     build: ./nginx
@@ -23,5 +22,5 @@ services:
     depends_on:
       - flask
     networks:
-      - nginx-proxy-manager_default
+      - scoobydoo
 
