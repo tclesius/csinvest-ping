@@ -15,6 +15,6 @@ services:
     container_name: nginx
     restart: always
     ports:
-      - 80:80
+      - 6969:80
     depends_on:
       - flask
