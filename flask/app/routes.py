@@ -1,5 +1,5 @@
 from app import app
-from flask import request
+from flask import request, jsonify
 
 @app.route('/ping')
 def ping():
@@ -17,6 +17,6 @@ def json():
     password = args.get('password')
 
     if not '@' in email: 
-        return {'success': False, 'error': 'Invalid email'}
+        return jsonify({'success': False, 'error': 'Invalid email'})
     
-    return {'success': True, 'email': email, 'password': password}
+    return jsonify({'success': True, 'email': email, 'password': password})
